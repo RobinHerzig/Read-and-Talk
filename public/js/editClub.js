@@ -32,10 +32,10 @@ async function deleteClub(){
 
 async function updateClub(){
   let arr = Array.from(this.parentNode.childNodes)
-  const name = arr[1].value
-  const book = arr[3].value
-  const description = arr[5].value
-  const isbn = arr[7].value
+  const name = document.getElementById('clubInput1').value
+  const book = document.getElementById('bookTitle1').value
+  const description = document.getElementById('clubDesc1').value
+  const isbn = document.getElementById('bookIsbn1').value
   const id = this.dataset.id
 
   try{

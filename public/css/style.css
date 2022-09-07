@@ -135,7 +135,6 @@ p {
   width: 20%;
   transition: all 0.3s ease;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
-  
 }
 
 .form-login:hover {
@@ -185,40 +184,132 @@ p {
 #quote-txt {
   font-style: italic;
   color: rgba(255, 255, 255, 0.5);
-/*   font-weight: 100; */
-/*   font-size: 1.4rem; */
 }
 
 #quote-author {
   font-style: italic;
   color: rgba(255, 255, 255, 0.7);
-/*   font-weight: 100; */
-/*   font-size: 1.4rem; */
 }
 
 
 /* //////////////////////////// */
 /* pages: others - clubs */
-.page-others {
-  margin: 0 auto;
+/* .page-others {
   max-width: 700px;
-  background: rgba(0, 0, 0, 1);
+  margin: 0 auto;
+} */
+
+
+.container-clubs {
+  margin-top: 2rem;  
 }
 
-.page-clubs {
+.page-clubs, .page-club {
   height: 100vh;
   background: white;
-  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.page-club {
+.header-clubs {
+  margin-bottom: 2rem;
+  color: rgba(115, 114, 151, 1);
+  margin-bottom: 0;
+}
+
+#create-club {
+  text-align: center;
+  padding: 3rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  
+  background: linear-gradient(60deg, #7fc29b, #65524D, #737297);
+  background-size: 400% 400%;
+  
+  -webkit-animation: AniBanner 30s ease infinite;
+  -moz-animation: AniBanner 30s ease infinite;
+  animation: AniBanner 30s ease infinite;
+}
+
+@-webkit-keyframes AniBanner {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AniBanner {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AniBanner {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+#create-club h1 {
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.my-clubs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  transition: all 0.3s ease;
+}
+
+.my-club, .other-club {
+  padding-top: 5.5rem;
+  padding-bottom: 2.5rem;
+  color: white;
+  text-align: right;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.my-club {
+  background: url(../img/bookclub-bg-club.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.other-club {
+  background: url(../img/bookclub-bg-otherclub.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  margin: 1rem 0;
+}
+
+.other-club a {
+  margin-top: 1rem;
+}
+
+.my-club:hover, .other-club:hover {
+  box-shadow: 0px 0px 0px 1px rgba(115, 114, 151, 0.8);
+  filter: brightness(1.05);
+}
+
+
+
+/* //////////////////////////// */
+/* pages: others - club */
+
+/* .page-club {
   height: 100vh;
   background: white;
-}
+  max-width: 700px;
+  margin: 0 auto;
+} */
 
 .club-name {
   padding-top: 10rem;
-/*   background: rgba(181, 239, 138, 1); */
   color: white;
   text-align: right;
   
@@ -232,30 +323,34 @@ p {
   border-bottom-right-radius: 1rem;
 }
 
-.button-club {
-  margin: 0.2rem;
-  color: rgba(255, 255, 255, 1);
-/*   border: rgba(215, 241, 113, 1) 0.2rem solid; */
-/*   background: rgba(215, 241, 113, 0.8); */
-  border: rgba(115, 114, 151, 1) 0.2rem solid;
-  background: rgba(115, 114, 151, 0.5);
-  border-radius: 0.5rem;
-  display:inline-block;
-  min-width: 20rem;
-  align-self: right;
-}
-
-.button-club:hover,
-.button-club:active {
-  background: rgba(115, 114, 151, 1);
-  color: white;
-  
-}
-
 .members-group {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 1rem;
+}
+
+.page-club h4 {
+  color: rgba(115, 114, 151, 1);
+}
+
+.page-club h2 {
+  font-family: 'Lobster', cursive;
+
+  color: rgba(115, 114, 151, 1);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.page-club p {
+  color: rgba(115, 114, 151, 0.8);
+}
+
+#club-description {
+  padding: 2rem;
+  border: dashed 1px rgba(115, 114, 151, 0.8);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .members-num {
@@ -263,7 +358,6 @@ p {
   border-radius: 50%;
   background: rgba(115, 114, 151, 0.5);
   border: rgba(115, 114, 151, 1) 1px solid;
-  
   color: white;
 }
 
@@ -279,6 +373,86 @@ p {
 
 .user-pic:hover {
   filter: brightness(1.2);
+}
+
+.current-book-rating {
+  padding: 2rem 0;
+  background: rgba(115, 114, 151, 0.05);
+}
+
+#current-rating {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#book-rating-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+#book-rating {
+  display: flex;
+  justify-content: center;
+}
+
+#book-rating-options {
+  padding: 0.5rem;
+  margin-right: 0.25rem;
+  border-radius: 0.3rem;
+  color: rgba(115, 114, 151, 0.8);
+  border: solid 1px rgba(115, 114, 151, 0.8);
+}
+
+.btn-rating {
+  padding: 0.5rem;
+  margin-left: 0.25rem;
+  background: rgba(255, 255, 255, 1);
+  border: solid 1px rgba(115, 114, 151, 0.8);
+  color: rgba(115, 114, 151, 0.8);
+  border-radius: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.btn-rating:hover {
+  background: rgba(115, 114, 151, 0.5);
+  color: rgba(255, 255, 255, 1);
+}
+
+.buttons-club {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.button-club {
+  margin: 0.2rem;
+  color: rgba(255, 255, 255, 1);
+  border: rgba(115, 114, 151, 1) 0.2rem solid;
+  background: rgba(115, 114, 151, 0.5);
+  border-radius: 0.5rem;
+  display:inline-block;
+  min-width: 20rem;
+}
+
+.button-club:hover,
+.button-club:active {
+  background: rgba(115, 114, 151, 1);
+  color: white;
+}
+
+.btn-info {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 1);
+  border: solid 1px rgba(115, 114, 151, 0.8);
+  color: rgba(115, 114, 151, 0.8);
+  border-radius: 0.3rem;
+  transition: all 0.3s ease;
+  padding: 1rem 2rem;
+}
+
+.btn-info:hover {
+  background: rgba(115, 114, 151, 0.5);
+  color: rgba(255, 255, 255, 1);
 }
 
 .comments {
@@ -322,6 +496,52 @@ p {
 
 
 
+
+
+/* //////////////////////////// */
+/* page: my club */
+.my-club {
+  padding-top: 5.5rem;
+  padding-bottom: 2.5rem;
+  
+  color: white;
+  text-align: right;
+  
+  background: url(../img/bookclub-bg-club.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.my-club h2 {
+  
+}
+
+.my-club p, .other-club p {
+  margin-bottom: 2rem;
+  margin-right: 0.5rem;
+}
+
+.btn-viewclub {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  background: white;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  color: rgba(115, 114, 151, 0.7);
+  
+  transition: all 0.3s ease;
+}
+
+.btn-viewclub:hover {
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
+}
+
 /* //////////////////////////// */
 /* navigation bar */
 
@@ -333,7 +553,7 @@ p {
 }
 
 #logo {
-  position: absolute;
+  position: fixed;
   top: 5%;
   left: 25%;
   transform: translate(-50%, -50%);
@@ -359,12 +579,18 @@ p {
  */
 
 #menu {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   top: 70%;
   right: 25%;
   transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: rgba(215, 241, 113, 0.8);
+  border: rgba(215, 241, 113, 1) solid 2px;
 }
 
 #menu img {
@@ -373,10 +599,11 @@ p {
   width: 3rem; 
   height: 3rem;
   transition: all 0.3s ease;
+  filter: grayscale(0.6);
 }
 
 #menu img:hover {
-  filter: brightness(1.1);
+  filter: grayscale(0);
 }
 
 
@@ -406,3 +633,28 @@ p {
   max-width: 75px;
   max-height: 75px;
 } */
+
+
+
+/* //////////////////////////// */
+/* mobile */
+
+@media screen and (max-width: 1280px) {
+  #menu {
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #menu {
+    right: 1rem;
+    border: rgba(0, 0, 0, 1) solid 2px;
+    background: rgba(215, 241, 113, 0.8);
+/*     background: rgba(0, 0, 0, 0.8); */
+/*     border: rgba(215, 241, 113, 1) solid 2px; */
+/*     background: rgba(115, 114, 151, 0.9); */
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+}
+

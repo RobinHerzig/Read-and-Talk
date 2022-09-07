@@ -6,11 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Read & Talk</title>
   <link rel="stylesheet" href="/css/style.css">
+  <%- include('partials/bootstrap.ejs') -%>
 </head>
 <body>
 <!--   <form action='/editClub/editClub/<%=id%>' method='PUT'> -->
   <%- include('partials/nav.ejs') -%>
-  <div>
+    <div class="container ">
+    <div class="form-group">
+      <label class="h4 mt-2" for="clubInput1">Club Name</label>
+      <input type="text" class="form-control form-control-lg" name="name" id="clubInput1"  placeholder="Club Name">
+    </div>
+    <div class="form-group">
+      <label class="h4 mt-2" for="bookTitle1">Enter the book the club is reading</label>
+      <input type="text" class="form-control form-control-lg" name="book" id="bookTitle1" placeholder="Book Title">
+    </div>
+    <div class="form-group">
+      <label class="h4 mt-2" for="clubDesc1">Enter club description</label>
+      <input type="text" class="form-control form-control-lg" name="description" id="clubDesc1" placeholder="Description">
+    </div>
+    <div class="form-group">
+      <label class="h4 mt-2" for="bookIsbn1">Enter the isbn number for the book</label>
+      <input type="text" class="form-control form-control-lg" name="isbn" id="bookIsbn1" placeholder="Book isbn">
+    </div>
+    <button type="submit" class="btn btn-lg btn-info mt-3" data-id='<%=id%>' id='update'>Edit</button>
+    <button class="btn btn-danger btn-lg mt-3" data-id='<%=id%>' id="deleteClub">Delete club</button>
+  </div>
+<!--   <div>
   
     <input id='name' type='text' placeholder="Edit Club Name" name='name'>
     <input id='book' type='text' placeholder='Edit book club' name='book'>
@@ -19,7 +40,7 @@
     <input data-id='<%=id%>' id='update' type='submit'>
   </div>
 <!--   </form> -->
-  <button data-id='<%=id%>' id="deleteClub">Delete club</button>
+<!--   <button data-id='<%=id%>' id="deleteClub">Delete club</button> --> 
   <script src="/js/editClub.js"></script>
 </body>
 </html>

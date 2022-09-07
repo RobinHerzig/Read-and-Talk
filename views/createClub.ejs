@@ -6,15 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Read & Talk</title>
   <link rel="stylesheet" href="css/style.css">
+  <%- include('partials/bootstrap.ejs') -%>
 </head>
 <body>
   <%- include('partials/nav.ejs') -%>
-  <form action='/createClub/createClub' method='POST'>
+    <div>
+    <div class="container mt-4 page-others">
+    <form class="" action="/createClub/createClub" method="POST">
+      <div class="form-group">
+        <label class="h4 mt-2" for="clubInput">Club Name</label>
+        <input type="text" class="form-control form-control-lg" name="name" id="clubInput"  placeholder="Club Name">
+      </div>
+      <div class="form-group">
+        <label class="h4 mt-2" for="bookTitle">Enter the book the club is reading</label>
+        <input type="text" class="form-control form-control-lg" name="book" id="bookTitle" placeholder="Book Title">
+      </div>
+      <div class="form-group">
+        <label class="h4 mt-2" for="clubDesc">Enter club description</label>
+        <input type="text" class="form-control form-control-lg" name="description" id="clubDesc" placeholder="Description">
+      </div>
+      <div class="form-group">
+        <label class="h4 mt-2" for="bookIsbn">Enter the isbn number for the book</label>
+        <input type="text" class="form-control form-control-lg" name="isbn" id="bookIsbn" placeholder="Book isbn">
+      </div>
+      <button type="submit" class="btn btn-lg btn-primary mt-3">Create</button>
+    </form>
+  </div>
+    </div>
+<!--   <form action='/createClub/createClub' method='POST'>
     <input type='text' placeholder="Enter Club Name" name='name'>
     <input type='text' placeholder='Enter book club is reading' name='book'>
     <input type='text' placeholder='Enter description' name='description'>
     <input type='text' placeholder='Enter isbn' name='isbn'>
     <input type='submit'>
-  </form>
+  </form> -->
 </body>
 </html>

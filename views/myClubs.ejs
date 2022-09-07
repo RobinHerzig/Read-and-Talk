@@ -6,19 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Read & Talk</title>
   <link rel="stylesheet" href="/css/style.css">
+  <%- include('partials/bootstrap.ejs') -%>
 </head>
 <body>
   <%- include('partials/nav.ejs') -%>
   <section class="page-others">
     <section class="page-clubs">
+      
       <% for( let i = 0; i < clubs.length; i++ ) { %>
-        <div>
+        <section class="my-club">
           <h2><%= clubs[i].name %></h2>
           <p><%= clubs[i].description %></p>
-          <button><a href="/clubs/<%= clubs[i]._id %>">View Club</a></button>
-        </div>
-      <% } %>
+          <a class='btn-viewclub' href="/clubs/<%= clubs[i]._id %>">View Club</a>
+        </section>
         
+      <% } %>
     </section>
   </section>
 </body>

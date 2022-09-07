@@ -80,6 +80,7 @@ module.exports = {
     const club = await Club.findById({_id: clubId})
     club.members = club.members.filter(m => m != userId)
     user.clubs = user.clubs.filter(c => c != clubId)
+    await user.save()
     await club.save()
     res.json('left club')
     

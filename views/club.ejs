@@ -6,59 +6,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Read & Talk</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <%- include('partials/nav.ejs') -%>
-  <section class="page-others">
+<!--   <section class="page-others"> -->
     <section class="page-club">
     
       <h1 class='club-name'><%= club.name %></h1>
       <section class='members-group'>
         <h4>Members:</h4>
         <h4 class='members-num'><%= numMembers %></h4>
-        
+        <!-- fake profile pics -->
         <img class='user-pic' src="../img/bookclub-user4.jpg" alt="Raquel Green">
         <img class='user-pic' src="../img/bookclub-user5.jpg" alt="Ken Adams">
         <img class='user-pic' src="../img/bookclub-user6.jpg" alt="Regina Phalange">
         <img class='user-pic' src="../img/bookclub-more.png" alt="click to see more">
       </section>
-      
-      <h4>Current book</h4>
-      <h2><%= club.book %></h2>
-      <p><%= club.description %></p>
-      
-      <p>Book Rating: <%= club.ratingScore %> / 5</p>
-      <p># of votes: <%= club.raters.length %></p>
-      <% console.log('hi', club.raters) %>
-      <% if(club.members.includes(userId) && !club.raters.includes(userId)){%>
-        <div>
-          <h4>Rate this book 1-5:</h4>
-          <select name='rating'>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
-          </select>
-          <button data-id="<%=userId%>" id='rate'>submit rating</button>
-        </div>
-      <%}%>
+
+      <section class='current-book'>
+        <h4>Current Book</h4>
+        <h2><%= club.book %></h2>
+        <p id='club-description'><%= club.description %></p>
+
+        <section class='current-book-rating'>
+          <p id='current-rating'>Book Rating: <%= club.ratingScore %> / 5 | Number of Votes: <%= club.raters.length %></p>
+          <!--<% console.log('hi', club.raters) %> -->
+          <% if(club.members.includes(userId) && !club.raters.includes(userId)){%>
+          <p id='book-rating-title'>Rate This Book:</p>
+          <section id='book-rating'>
+            <select id='book-rating-options' name='rating'>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='4'>4</option>
+              <option value='5'>5</option>
+            </select>
+            <button class='btn-rating' data-id="<%=userId%>" id='rate'>Rate</button>
+          </section>
+        </section>
+          
+        <%}%>
         <script type="text/javascript" src="//books.google.com/books/previewlib.js"></script>
   
         <script type="text/javascript">
-      // GBS_insertPreviewButtonPopup(`ISBN:${<%= club.isbn %>}`);
+      GBS_insertPreviewButtonPopup(`ISBN:${<%= club.isbn %>}`);
         </script>
-    <% if(club.userId === userId){%>
-      <button><a href="/editClub/<%= club._id%>">Edit Club</a></button>
-    <%}%>
-    <% if(!isMember){%>
-      <button class='button-club btn' data-id="<%=userId%>" id='join'>Join Club</button>
-    <%}else if(club.userId != userId){%>
-      <button class='button-club btn' data-id="<%=userId%>" id='unjoin'>Leave Club</button>
-    <%}%>
-      <script src="/js/joinClub.js"></script>
+      </section>    
 
+      <section class='buttons-club'>
+        <% if(club.userId === userId){%>
+         <a class="btn btn-info btn-lg" href="/editClub/<%= club._id%>">Edit Club</a>
+        <%}%>
+        <% if(!isMember){%>
+          <button class='button-club btn' data-id="<%=userId%>" id='join'>Join Club</button>
+        <%}else if(club.userId != userId){%>
+          <button class='button-club btn' data-id="<%=userId%>" id='unjoin'>Leave Club</button>
+        <%}%>
+        <script src="/js/joinClub.js"></script>
+      </section>    
 
+      <!-- fake comments  -->
       <section class="comments">
           <h4 class='comments-header'>Comments:</h4>
         
@@ -88,6 +99,6 @@
         
       </section>
     </section>
-  </section>
+<!--   </section> -->
 </body>
 </html>

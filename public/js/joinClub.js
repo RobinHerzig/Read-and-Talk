@@ -9,7 +9,7 @@ if(rate) rate.addEventListener('click', rateClub)
 async function rateClub(){
   console.log("hello?")
   const userId = this.dataset.id
-  const rating = Number(this.parentNode.childNodes[3].value)
+  const rating = Number(document.querySelector('#book-rating-options').value)
   const clubId = window.location.href.split('/').slice(-1)[0]
   try{
     const response = await fetch('rateClub', {

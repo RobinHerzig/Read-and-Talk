@@ -9,29 +9,42 @@
 </head>
 <body>
   <%- include('partials/nav.ejs') -%>
-  <section class="page-others">
+<!--   <section class="page-others"> -->
     <section class="page-clubs">
-      <h1>Create your own club</h1>
-      <button><a href="/createClub">Create</a></button>
-      <h1>Your current clubs</h1>
-      <% for( let i = 0; i < myClubs.length; i++ ) { %>
-        <div>
-          <h2><%= myClubs[i].name %></h2>
-          <p><%= myClubs[i].description %></p>
-          <button><a href="/clubs/myClubs/<%= myClubs[i]._id %>">View Club</a></button>
-        </div>
-      <%}%>
       
-      <h1>Or choose a club to join</h1>
-      <% for( let i = 0; i < clubs.length; i++ ) { %>
-        <div>
-          <h2><%= clubs[i].name %></h2>
-          <p><%= clubs[i].description %></p>
-          <button><a href="/clubs/<%= clubs[i]._id %>">View Club</a></button>
-        </div>
-      <% } %>
-        
+      <section id='create-club'>
+        <h1 i>Welcome To The Clubs!</h1>
+        <a class='button-main btn btn-success btn-lg' href="/createClub">Create Your Own</a>
+      </section>  
+
+      <section class='container-clubs'>
+        <h3 class='header-clubs'>Your Clubs</h3>
+        <section class='my-clubs'>
+          <% for( let i = 0; i < myClubs.length; i++ ) { %>
+            <section class='my-club'>
+              <h2><%= myClubs[i].name %></h2>
+              <p><%= myClubs[i].description %></p>
+              <a class='btn-viewclub' href="/clubs/<%= myClubs[i]._id %>">View Club</a>
+            </section>  
+          <%}%>
+        </section>  
+      </section>  
+
+          
+      <section class='container-clubs'>
+        <h3 class='header-clubs'>Recommended Groups</h3>
+        <section class='other-clubs'>
+          <% for( let i = 0; i < clubs.length; i++ ) { %>
+            <section class='other-club'>
+              <h2><%= clubs[i].name %></h2>
+              <p><%= clubs[i].description %></p>
+              <a class='btn-viewclub' href="/clubs/<%= clubs[i]._id %>">View Club</a>
+            </section>
+          <% } %>
+        </section>  
+      </section>
+            
     </section>
-  </section>
+<!--   </section> -->
 </body>
-</html> 
+</html>

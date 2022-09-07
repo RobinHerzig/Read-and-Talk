@@ -4,7 +4,7 @@ const clubsController = require('../controllers/clubs')
 const { ensureAuth } = require('../middleware/auth')
 
 router.get('/', ensureAuth, clubsController.getClubs)
-router.get('/myClubs/:id', clubsController.getMyClubs)
+router.get('/myClubs', clubsController.getMyClubs)
 router.get('/:id', clubsController.getClub)
 router.put('/updateClub', clubsController.updateClub)
 router.put('/joinClub', clubsController.joinClub)
